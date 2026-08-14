@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Haru's Profiles</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+/* =========================================
+   BASIC RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  background: #000;
+}
+body {
+  background: #000;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+/* =========================================
+   MAIN CONTENT WRAPPER
+========================================= */
+.content-wrapper {
+  width: calc(100% - 40px);
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #000;
+  border-radius: 28px;
+  border: 2px solid #151515;
+  box-shadow:
+    0 0 18px rgba(255,255,255,0.08);
+}
+/* =========================================
+   PROFILE CARD
+========================================= */
+.profile-card {
+/* ==============================
+     CHANGE THIS TO CHANGE
+     THE CARD HEIGHT
+  ============================== */
+  height: 205px;
+  min-height: 0;
+  max-height: 217px;
+  width: 100%;
+  background: #000;
+  border: 2px solid #3a0a0a;
+  border-radius: 28px;
+  margin-bottom: 10px;
+/* IMPORTANT:
+     The card itself is now
+     the positioning area. */
+  position: relative;
+  padding: 0;
+  box-shadow:
+    0 0 18px rgba(255,0,0,0.010);
+  box-sizing: border-box;
+  overflow: visible;
+}
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+.profile-img {
+  position: absolute;
+/*
+     CHANGE THESE TO MOVE THE
+     PROFILE PICTURE
+  */
+  top: 17px;
+  left: 28%;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2a2a2a;
+/*
+     Keeps the image centered
+     relative to its own width.
+  */
+  transform: translateX(-50%);
+}
+/* =========================================
+   USERNAME
+========================================= */
+.username {
+  position: absolute;
+/*
+     CHANGE THESE TO MOVE
+     THE NAME
+  */
+  top: 40px;
+  left: 73%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+/* =========================================
+   FIRST BIO
+========================================= */
+.bio-1 {
+  position: absolute;
+/*
+     CHANGE THESE TO MOVE
+     •ANTISOCIAL•
+  */
+  top: 79px;
+  left: 74%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.65;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+/* =========================================
+   SECOND BIO
+========================================= */
+.bio-2 {
+  position: absolute;
+/*
+     CHANGE THESE TO MOVE
+     ꨄMARRIEDꨄ
+  */
+  top: 94px;
+  left: 74%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.65;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+/* =========================================
+   THIRD BIO
+========================================= */
+.bio-3 {
+  position: absolute;
+  top: 121px;
+  left: 74%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.65;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+.icon-row {
+  position: absolute;
+/*
+     CHANGE THIS TO MOVE
+     THE ICONS UP / DOWN
+  */
+  top: 165px;
+  bottom: auto;
+/*
+     Keeps the entire icon row
+     centered.
+  */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/*
+     YOUR ORIGINAL GAP
+  */
+  gap: 25px;
+}
+/* =========================================
+   ICON STYLE
+========================================= */
+.icon-row a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+/* ICON HOVER */
+.icon-row a:hover {
+  transform: scale(1.15);
+  color: white;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7);
+}
+/* WEBNOVEL */
+.icon-row a:last-child:hover {
+  color: #ffd700;
+  text-shadow:
+    0 0 10px #ffd700;
+}
+/* =========================================
+   FEATURED BANNER
+========================================= */
+.featured {
+  width: 100%;
+  margin: 0 auto 25px auto;
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(255,77,109,0.1);
+  transition:
+    box-shadow 0.3s ease;
+}
+.featured:hover {
+  box-shadow:
+    0 0 25px rgba(255,77,109,0.3);
+}
+.featured img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* =========================================
+   PLATFORM BUTTONS
+========================================= */
+.link-btn {
+  display: block;
+  width: 100%;
+  margin: 12px auto;
+  padding: 16px;
+  background: #111;
+  border-radius: 16px;
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #1f1f1f;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.link-btn:hover {
+  background: #151515;
+  transform: translateY(-2px);
+}
+/* =========================================
+   RED / BLUE GLOWS
+========================================= */
+.fb-btn:hover {
+  box-shadow: 0 0 15px #ff0000;
+  border-color: #ff0000;
+}
+.ig-btn:hover {
+  box-shadow: 0 0 15px #1877f2;
+  border-color: #1877f2;
+}
+.tt-btn:hover {
+  box-shadow: 0 0 15px #ff0000;
+  border-color: #ff0000;
+}
+.x-btn:hover {
+  box-shadow: 0 0 15px #1877f2;
+  border-color: #1877f2;
+}
+.dc-btn:hover {
+  box-shadow: 0 0 15px #ff0000;
+  border-color: #ff0000;
+}
+.wn-btn:hover {
+  box-shadow: 0 0 15px #1877f2;
+  border-color: #1877f2;
+}
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 400px) {
+  .content-wrapper {
+    width: calc(100% - 24px);
+    padding: 12px;
+  }
+  .profile-card {
+    height: 500px;
+  }
+  .icon-row {
+    gap: 20px;
+  }
+  .icon-row a {
+    font-size: 27px;
+  }
+  .username {
+    font-size: 27px;
+  }
+}
+@media (max-width: 340px) {
+  .icon-row {
+    gap: 15px;
+  }
+  .icon-row a {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="content-wrapper">
+<!-- =====================================
+       PROFILE CARD
+  ====================================== -->
+  <div class="profile-card">
+    <!-- PROFILE PICTURE -->
+    <img src="Profile.jpg"class="profile-img"alt="Haru Profile Picture">
+    <!-- NAME -->
+    <div class="username">
+      Haru
+    </div>
+    <!-- BIO -->
+    <div class="bio-1">
+      •Antisocial•
+    </div>
+    <div class="bio-2">
+      ꨄMarriedꨄ
+    </div>
+    <div class="bio-3">
+      "Don't bother me"
+    </div>
+<!-- =================================
+         SOCIAL ICONS
+    ================================== -->
+     <div class="icon-row">
+     <!-- FACEBOOK -->
+     <a
+        href="https://www.facebook.com/share/1BhQiLW6Gk/"
+        target="_blank"
+        aria-label="Facebook"
+      ><i class="fab fa-facebook"></i>
+      </a>
+      <!-- INSTAGRAM -->
+      <a
+        href="https://www.instagram.com/nyth_haru?igsh=ZjRlamZhM25ra2Vj"
+        target="_blank"
+        aria-label="Instagram"
+      ><i class="fab fa-instagram"></i>
+      </a>
+      <!-- TIKTOK -->
+      <a
+        href="https://www.tiktok.com/@a_nobody.0.0?_r=1&_t=ZS-955i9K1Bzhn"
+        target="_blank"
+        aria-label="TikTok"
+      ><i class="fab fa-tiktok"></i>
+      </a>
+      <!-- X -->
+      <a
+        href="https://x.com/MiRu2i"
+        target="_blank"
+        aria-label="X"
+      ><i class="fab fa-x-twitter"></i>
+      </a>
+      <!-- DISCORD -->
+      <a
+        href="https://discord.com/users/1350683609295491165"
+        target="_blank"
+        aria-label="Discord"
+      ><i class="fab fa-discord"></i>
+      </a>
+      <!-- WEBNOVEL -->
+      <a
+        href="https://m.webnovel.com/profile/4505561748"
+        target="_blank"
+        aria-label="Webnovel"
+      ><i class="fa-solid fa-book-open"></i>
+      </a>
+  </div>
+  </div>
+<!-- =====================================
+       BANNER
+  ====================================== -->
+  <div class="featured">
+    <img
+      src="Banner.jpg"
+      alt="Featured Banner"
+    >
+  </div>
+<!-- =====================================
+       PLATFORM BUTTONS
+  ====================================== -->
+  <a href="https://www.facebook.com/share/1BhQiLW6Gk/"class="link-btn fb-btn"target="_blank">Facebook</a>
+  <a href="https://www.instagram.com/nyth_haru?igsh=ZjRlamZhM25ra2Vj"class="link-btn ig-btn"target="_blank">Instagram</a>
+  <a href="https://www.tiktok.com/@a_nobody.0.0?_r=1&_t=ZS-955i9K1Bzhn"class="link-btn tt-btn"target="_blank">TikTok</a>
+  <a href="https://x.com/MiRu2i"class="link-btn x-btn"target="_blank">X</a>
+  <a href="https://discord.com/users/1350683609295491165"class="link-btn dc-btn"target="_blank">Discord</a>
+  <a href="https://m.webnovel.com/profile/4505561748"class="link-btn wn-btn"target="_blank">Webnovel</a>
+</div>
+</body>
+  </html>
